@@ -12,15 +12,7 @@ FFMPEG_VERSION    = 8.1.2
 # defaults
 # -----------------------------------------------------------------------------
 
-.DEFAULT_GOAL = info
-
-# -----------------------------------------------------------------------------
-# welcome
-# -----------------------------------------------------------------------------
-
-.PHONY: info
-info:
-	@echo "ytdlp: $(ROOT)"
+.DEFAULT_GOAL = env-shell
 
 # -----------------------------------------------------------------------------
 # conda environment
@@ -61,8 +53,7 @@ env-remove:
 	@conda env remove --name "$(CONDA_ENV_NAME)" --yes
 
 .PHONY: env-shell
-#env-shell: export PATH := '$(ROOT)/bin:${PATH}'
-#env-shell: export PS1  := '[ytdlp] ${PS1}'
+env-shell: export PATH := $(ROOT)/bin:${PATH}
 env-shell:
 	@conda run --no-capture-output --live-stream --name "$(CONDA_ENV_NAME)" \
 		bash

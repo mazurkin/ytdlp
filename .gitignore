@@ -7,3 +7,19 @@
 
 .ipynb_checkpoints
 __pycache__
+
+*.wav
+*.mp3
+*.ogg
+*.aac
+*.flac
+*.wma
+
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+*.wmv
+*.flv
+*.mts
