@@ -20,6 +20,10 @@ export PYTHONUNBUFFERED=1
 
 exec conda run --no-capture-output --live-stream --name ytdlp \
     yt-dlp \
+        --no-update \
+        --progress \
+        --js-runtimes deno \
+        --embed-thumbnail \
         --paths "${PACKAGE_DIR}/target" \
         --cookies-from-browser firefox \
         "$@"

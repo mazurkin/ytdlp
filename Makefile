@@ -7,6 +7,7 @@ CONDA_ENV_NAME    = ytdlp
 PYTHON_VERSION    = 3.12.15
 POETRY_VERSION    = 2.5.1
 FFMPEG_VERSION    = 8.1.2
+DENOJS_VERSION    = 2.9.8
 
 # -----------------------------------------------------------------------------
 # defaults
@@ -23,7 +24,8 @@ env-create:
 	@conda create --yes --copy --name "$(CONDA_ENV_NAME)" \
 		conda-forge::python=$(PYTHON_VERSION) \
 		conda-forge::poetry=$(POETRY_VERSION) \
-		conda-forge::ffmpeg=$(FFMPEG_VERSION)
+		conda-forge::ffmpeg=$(FFMPEG_VERSION) \
+		conda-forge::deno=$(DENOJS_VERSION)
 
 .PHONY: env-poetry-install
 env-poetry-install:
