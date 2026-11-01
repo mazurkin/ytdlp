@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+set -o monitor
+set -o noglob
+
+export PYTHONDONTWRITEBYTECODE=1
+export PYTHONUNBUFFERED=1
+
+exec conda run --no-capture-output --live-stream --name ytdlp \
+    yt-dlp \
+        -x \
+        --audio-format mp3 \
+        --audio-quality 0 \
+        "$@"

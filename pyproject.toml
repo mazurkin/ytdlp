@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "ytdlp-environment"
+version = "0.1.0"
+description = "ytdlp-environment project"
+authors = ["Nikolai Mazurkin <mazurkin@gmail.com>"]
+readme = ""
+
+[tool.poetry.dependencies]
+python = "3.12.*"
+
+[tool.poetry.group.platform.dependencies]
+setuptools = "84.2.1"
+pip = "26.2.2"
+
+[tool.poetry.group.ytdlp.dependencies]
+yt-dlp = "2026.10.26"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
